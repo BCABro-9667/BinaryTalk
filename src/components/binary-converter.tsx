@@ -119,14 +119,16 @@ export function BinaryConverter() {
               </Badge>
             ))}
           </div>
-          <Button type="submit" disabled={isConverting} className="w-full sm:w-auto" size="lg">
-            {isConverting ? (
-              <Loader2 className="animate-spin" />
-            ) : (
-              <Wand2 />
-            )}
-            <span>{isConverting ? "Converting..." : "Convert to Binary"}</span>
-          </Button>
+          <div className="flex justify-end">
+            <Button type="submit" disabled={isConverting} className="rounded-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90" size="lg">
+              {isConverting ? (
+                <Loader2 className="animate-spin" />
+              ) : (
+                <Wand2 />
+              )}
+              <span>{isConverting ? "Converting..." : "Convert to Binary"}</span>
+            </Button>
+          </div>
         </form>
       </Form>
 
