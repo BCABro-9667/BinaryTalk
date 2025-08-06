@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: 'BinaryTalk',
-  description: 'Convert text from any language into binary code.',
+  description: '',
   manifest: '/manifest.webmanifest'
 };
 
