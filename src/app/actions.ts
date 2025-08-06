@@ -1,7 +1,6 @@
 
 'use server'
 
-import { textToBinary } from "@/ai/flows/text-to-binary";
 import { z } from "zod";
 
 const inputSchema = z.object({
@@ -22,9 +21,15 @@ export async function convertTextToBinaryAction(values: z.infer<typeof inputSche
   
   try {
     const { text } = validatedFields.data;
-    const result = await textToBinary({ text });
-    if (result && result.binary) {
-      return { success: result.binary };
+    const binary = Array.from(text)
+      .map(char => {
+        const binaryCode = char.charCodeAt(0).toString(2);
+        return binaryCode.padStart(8, '0'); // Ensure 8-bit representation
+      })
+      .join(' ');
+      
+    if (binary) {
+      return { success: binary };
     } else {
       return { error: "Conversion failed to produce a result." };
     }
