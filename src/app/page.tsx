@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 sm:p-6 md:p-8">
       <Image
-        src="https://img.freepik.com/free-vector/white-digital-matrix-binary-code-numbers-background_1017-25332.jpg"
+        src="https://static.vecteezy.com/system/resources/previews/022/273/956/non_2x/binary-coding-computer-digital-data-encryption-and-algorithms-illustration-isolated-on-white-background-vector.jpg"
         alt="Binary code background"
         layout="fill"
         objectFit="cover"
