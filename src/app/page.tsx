@@ -21,7 +21,7 @@ export default function Home() {
         </CardContent>
       </Card>
        <footer className="mt-8 text-center text-sm text-muted-foreground">
-        <p>Built with Next.js and Firebase Genkit.</p>
+        <p>Made with ❤️ by Avdhesh Kumar</p>
       </footer>
     </main>
   );
