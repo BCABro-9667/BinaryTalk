@@ -20,12 +20,15 @@ import { useToast } from "@/hooks/use-toast";
 import { convertTextToBinaryAction } from "@/app/actions";
 import { Card, CardContent } from "./ui/card";
 import { Separator } from "./ui/separator";
+import { Badge } from "./ui/badge";
 
 const formSchema = z.object({
   text: z.string().min(1, {
     message: "Please enter some text to convert.",
   }),
 });
+
+const PREDEFINED_PHRASES = ["Hello", "i love u", "i like u", "how are u", "are u so gorgeous"];
 
 export function BinaryConverter() {
   const [binaryOutput, setBinaryOutput] = React.useState<string>("");
@@ -57,6 +60,11 @@ export function BinaryConverter() {
     }
     
     setIsConverting(false);
+  };
+
+  const handleCapsuleClick = (phrase: string) => {
+    form.setValue("text", phrase);
+    onSubmit({ text: phrase });
   };
 
   const handleCopy = () => {
@@ -99,6 +107,18 @@ export function BinaryConverter() {
               </FormItem>
             )}
           />
+           <div className="flex flex-wrap gap-2">
+            {PREDEFINED_PHRASES.map((phrase) => (
+              <Badge
+                key={phrase}
+                variant="secondary"
+                className="cursor-pointer"
+                onClick={() => handleCapsuleClick(phrase)}
+              >
+                {phrase}
+              </Badge>
+            ))}
+          </div>
           <Button type="submit" disabled={isConverting} className="w-full sm:w-auto" size="lg">
             {isConverting ? (
               <Loader2 className="animate-spin" />
