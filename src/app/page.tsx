@@ -28,7 +28,7 @@ export default function Home() {
           <BinaryConverter />
         </CardContent>
       </Card>
-      <footer className="mt-8 text-center text-sm text-white/80">
+      <footer className="mt-8 text-center text-sm text-black/80">
         <p>Made with ❤️ by Avdhesh Kumar</p>
       </footer>
     </main>
