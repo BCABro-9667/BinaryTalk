@@ -70,6 +70,13 @@ export function BinaryConverter() {
     setTimeout(() => setIsCopied(false), 2000);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      form.handleSubmit(onSubmit)();
+    }
+  };
+
   return (
     <div className="space-y-6">
       <Form {...form}>
@@ -85,6 +92,7 @@ export function BinaryConverter() {
                     placeholder="Enter any text here, in any language..."
                     className="min-h-[120px] resize-y text-base"
                     {...field}
+                    onKeyDown={handleKeyDown}
                   />
                 </FormControl>
                 <FormMessage />
