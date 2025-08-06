@@ -14,7 +14,7 @@ export default function Home() {
         className="-z-10"
         data-ai-hint="binary code"
       />
-      <Card className="w-full max-w-2xl border-0 bg-white/30 backdrop-blur-sm shadow-2xl shadow-primary/10 sm:border">
+      <Card className="w-full max-w-2xl border-0 bg-white/30 backdrop-blur-sm sm:shadow-2xl sm:shadow-primary/10 sm:border">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-3xl font-headline sm:text-4xl">
             <Binary className="h-8 w-8 text-primary" />
